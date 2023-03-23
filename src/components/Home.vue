@@ -43,6 +43,20 @@
 <span>{{ count }}</span>
 &nbsp; &nbsp;
 <button v-on:click="getSubCount()"> - </button>
+
+
+
+<form action="">
+    <label for="">Email</label>
+    <input type="text" name="" id="" placeholder="enter email" v-model="form.email2">
+    <h2>{{ form.email2 }}</h2>
+    <br><br>
+    <label for="">Password</label>
+    <input type="text" name="" id="" placeholder="enter password" v-model="form.password1">
+    <button type="button" v-on:click="login">Login</button>
+</form>
+
+<h1>Non Prop  Data</h1>
 </template>
 
 <script>
@@ -54,6 +68,10 @@ export default {
     },
     data() {
         return {
+            form:{
+                email2:"",
+                password1:""
+            },
             name: "Test",
             email: "Hello@gmail.com",
             mobile: 2929292,
@@ -68,6 +86,9 @@ export default {
         }
     },
     methods: {
+        login(){
+            console.warn(this.form);
+        },
         getName() {
             alert("song is the web developer");
         },
